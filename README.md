@@ -26,7 +26,6 @@ Deleting a photo works the same way; the workflow drops it from the manifest.
 
 ```json
 {
-  "generated": "2026-09-04T21:34:22Z",
   "count": 48,
   "images": [
     {
@@ -40,7 +39,8 @@ Deleting a photo works the same way; the workflow drops it from the manifest.
 ```
 
 `lat` / `lon` / `taken` come from each photo's EXIF and are **omitted** when the
-photo has none. The launcher uses them for the place/date overlay in the
+photo has none. The file is deterministic for a given photo set — there is no build
+timestamp — so the workflow only commits when the photos actually changed. The launcher uses them for the place/date overlay in the
 top-right of the home screen: it reverse-geocodes the coordinates on-device
 (nothing is looked up here) and formats `taken` as "July 22, 2023".
 

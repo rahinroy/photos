@@ -6,13 +6,17 @@ bits the TV launcher's overlay needs: GPS coordinates (reverse-geocoded to a
 place name on-device) and the capture time as ISO-8601.
 
     {
-      "generated": "2026-09-04T12:00:00Z",
+      "count": 48,
       "images": [
         {"url": "https://raw.githubusercontent.com/...jpg",
          "lat": 37.7749, "lon": -122.4194,
          "taken": "2024-07-06T01:09:29"}
       ]
     }
+
+The output is deterministic for a given photo set — no build timestamp — so the
+workflow's "commit only if changed" check actually means something. Git history
+is the record of when the manifest last changed.
 
 `lat`/`lon`/`taken` are omitted for photos that carry no such EXIF. The launcher
 also accepts a plain ["url", ...] array, so this shape is a superset.
@@ -23,7 +27,7 @@ from __future__ import annotations
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote
 
@@ -113,11 +117,7 @@ def main() -> int:
         bits = [k for k in ("lat", "taken") if k in entry]
         print(f"  {path.name}" + (f"  [{', '.join(bits)}]" if bits else "  [no exif]"))
 
-    manifest = {
-        "generated": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "count": len(images),
-        "images": images,
-    }
+    manifest = {"count": len(images), "images": images}
     MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"\nWrote {MANIFEST.name}: {len(images)} image(s)")
     return 0
