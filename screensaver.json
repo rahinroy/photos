@@ -1,6 +1,5 @@
 {
-  "generated": "2026-09-04T21:41:07Z",
-  "count": 48,
+  "count": 49,
   "images": [
     {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20230723_013604267.jpg",
@@ -289,6 +288,9 @@
       "lat": 29.054397,
       "lon": 110.480389,
       "taken": "2026-08-14T10:16:18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/_workflow_test.jpg"
     }
   ]
 }
