@@ -61,6 +61,10 @@ automatically.
 
 ## Notes
 
+- **`raw.githubusercontent.com` caches for about 5 minutes.** After the workflow commits
+  a new `screensaver.json`, the TV can still see the previous one for a few minutes.
+  Nothing is wrong — wait it out. (The launcher fetches the manifest once at start, so
+  a new photo shows up on its next restart anyway.)
 - Keep individual files under GitHub's 100 MB hard limit. `raw.githubusercontent.com`
   has no published rate limit but is not a CDN contract — it is fine for one TV.
 - Photos are downloaded once and disk-cached by Coil on the device, so a large
