@@ -1,0 +1,48 @@
+name: Build screensaver manifest
+
+# Runs whenever the photo set changes (add / rename / delete) and rewrites
+# screensaver.json. The path filter means the workflow's own commit — which only
+# touches screensaver.json — can never re-trigger it.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'photos/**'
+      - 'scripts/build_manifest.py'
+      - '.github/workflows/build-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-manifest
+  cancel-in-progress: false
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow
+        run: pip install --quiet 'pillow>=10,<12'
+
+      - name: Regenerate screensaver.json
+        run: python scripts/build_manifest.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- screensaver.json; then
+            echo "screensaver.json already up to date."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add screensaver.json
+          git commit -m "chore: rebuild screensaver.json ($(python -c 'import json;print(json.load(open("screensaver.json"))["count"])') photos)"
+          git push
