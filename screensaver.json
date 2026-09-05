@@ -1,5 +1,5 @@
 {
-  "count": 43,
+  "count": 44,
   "images": [
     {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20230723_013604267.jpg",
@@ -258,6 +258,9 @@
       "lat": 29.054397,
       "lon": 110.480389,
       "taken": "2026-08-14T10:16:18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/_resume_test.jpg"
     }
   ]
 }
