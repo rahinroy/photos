@@ -1,5 +1,5 @@
 {
-  "count": 48,
+  "count": 43,
   "images": [
     {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20230723_013604267.jpg",
@@ -62,18 +62,6 @@
       "taken": "2023-10-29T06:02:58"
     },
     {
-      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20231110_092138828.MP.jpg",
-      "lat": 22.328981,
-      "lon": 114.161792,
-      "taken": "2023-11-10T17:21:38"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20231120_085137616.MP.jpg",
-      "lat": 23.212039,
-      "lon": 105.417986,
-      "taken": "2023-11-20T15:51:37"
-    },
-    {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20231120_091825185.MP.jpg",
       "lat": 23.240719,
       "lon": 105.412036,
@@ -90,12 +78,6 @@
       "lat": 23.107114,
       "lon": 105.055431,
       "taken": "2023-11-21T12:06:42"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20231122_103244243.MP.jpg",
-      "lat": 21.046675,
-      "lon": 105.836428,
-      "taken": "2023-11-22T17:32:44"
     },
     {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20240521_060752981.jpg",
@@ -188,12 +170,6 @@
       "taken": "2025-06-21T12:19:59"
     },
     {
-      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20250621_052648993.jpg",
-      "lat": -38.922647,
-      "lon": 174.983733,
-      "taken": "2025-06-21T17:26:48"
-    },
-    {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20250622_003522103.jpg",
       "lat": -39.307442,
       "lon": 174.101131,
@@ -234,12 +210,6 @@
       "lat": -43.4379,
       "lon": 169.963053,
       "taken": "2025-07-04T17:05:16"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20260807_010831833.jpg",
-      "lat": 40.441867,
-      "lon": 116.558053,
-      "taken": "2026-08-07T09:08:31"
     },
     {
       "url": "https://raw.githubusercontent.com/rahinroy/photos/main/photos/PXL_20260807_013519737.jpg",
